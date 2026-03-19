@@ -1,4 +1,4 @@
-###*** pydantic-ai + pydantic-ai-litellm + puter.js ***
+### pydantic-ai + pydantic-ai-litellm + puter.js 
 
 > **Proof-of-Work · Developer Tutorial**
 >
