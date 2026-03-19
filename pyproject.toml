@@ -1,0 +1,23 @@
+[project]
+name = "pydantic-ai-litellm-puterjs"
+version = "0.1.0"
+description = "Proof-of-work tutorial: Pydantic-AI + LiteLLM + Puter.js free inference"
+readme = "README.md"
+authors = [
+    { name = "Charles Nichols", email = "nik@vizionikmedia.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "dotenv>=0.9.9",
+    "puter-python-sdk>=0.5.0",
+    "pydantic-ai-litellm>=0.2.3",
+    "pydantic-ai-slim[a2a]>=1.70.0",
+    "uvicorn>=0.42.0",
+]
+
+[project.scripts]
+pydantic-ai-litellm-puterjs = "pydantic_ai_litellm_puterjs:main"
+
+[build-system]
+requires = ["uv_build>=0.10.7,<0.11.0"]
+build-backend = "uv_build"
