@@ -10,7 +10,7 @@ This project is structured as a proper Python package — it has a `pyproject.to
 
 ## Why Puter.js?
 
-[Puter.com](https://puter.com) exposes an **OpenAI-compatible REST API** giving developers access to 400+ frontier models (GPT-5, Claude, Gemini, Llama, and more) at **zero developer cost** through a *user-pays* model — end-users cover their own inference costs through their Puter account, so you never touch an API key or an inference bill.
+[Puter.com](https://puter.com) exposes an **OpenAI-compatible REST API** as part of there Puter.js family of endpoints giving developers access to 400+ frontier models (GPT-5, Claude, Gemini, Llama, and more) at **zero developer cost** through a *user-pays* model — end-users cover their own inference costs through their Puter account, so you never touch an API key or an inference bill.
 
 ```
 https://api.puter.com/puterai/openai/v1/
@@ -32,7 +32,7 @@ LiteLLMModel          ← from pydantic-ai-litellm  (the critical bridge)
 LiteLLM               ← routes to any OpenAI-compatible endpoint
         │
         ▼
-Puter.com API         ← free inference, user-pays model
+Puter.js API         ← free inference, user-pays model
 ```
 
 | Layer | Package | Role |
@@ -40,7 +40,7 @@ Puter.com API         ← free inference, user-pays model
 | Agent framework | `pydantic-ai-slim` | Agents, tools, fasta2a server |
 | LLM bridge | `pydantic-ai-litellm` | Exposes `LiteLLMModel` to Pydantic-AI |
 | Inference router | `litellm` (auto-dep) | Drives any OpenAI-compatible endpoint |
-| Free inference | Puter.com API | 400+ models at zero dev cost |
+| Free inference | Puter.js API | 400+ models at zero dev cost |
 
 > **Critical:** You **must** use [`pydantic-ai-litellm`](https://github.com/mochow13/pydantic-ai-litellm) and its `LiteLLMModel` class — *not* Pydantic-AI's built-in OpenAI model. This separate library bridges Pydantic-AI to LiteLLM's routing layer, enabling custom `api_base` endpoints and access to 100+ providers through a unified interface.
 
@@ -161,7 +161,7 @@ PUTER_MODEL=openai/gpt-4o
 
 # Non-OpenAI models accessed via Puter's OpenAI-compatible endpoint
 # follow the same openai/provider-model-version format
-PUTER_MODEL=openai/anthropic-claude-4-6
+PUTER_MODEL=openai/anthropic-claude-sonnet-4-6
 PUTER_MODEL=openai/meta-llama-3-1-8b
 ```
 
